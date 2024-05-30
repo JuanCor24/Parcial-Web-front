@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Agregar Televisor</h1>
+
+    <!-- Formulario para agregar o editar televisor -->
+    <form (ngSubmit)="saveTelevisor()">
+        <div>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" [(ngModel)]="televisor.marca" name="marca" required>
+        </div>
+        <div>
+            <label for="tamano_pantalla">Tamaño de Pantalla:</label>
+            <input type="number" id="tamano_pantalla" [(ngModel)]="televisor.tamano_pantalla" name="tamano_pantalla">
+        </div>
+        <div>
+            <label for="resolucion">Resolución:</label>
+            <select id="resolucion" [(ngModel)]="televisor.resolucion" name="resolucion">
+                <option *ngFor="let resolucion of resoluciones" [value]="resolucion">{{ resolucion }}</option>
+            </select>
+        </div>
+        <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" [(ngModel)]="televisor.descripcion" name="descripcion"></textarea>
+        </div>
+        <div>
+            <label for="funciones_adicionales">Funciones Adicionales:</label>
+            <input type="text" id="funciones_adicionales" [(ngModel)]="televisor.funciones_adicionales" name="funciones_adicionales">
+        </div>
+        <div>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" [(ngModel)]="televisor.precio" name="precio">
+        </div>
+        <div>
+            <label for="descripcion_garantia">Descripción de Garantía:</label>
+            <textarea id="descripcion_garantia" [(ngModel)]="televisor.descripcion_garantia" name="descripcion_garantia"></textarea>
+        </div>
+        <div>
+            <label for="fechaCreacion">Fecha de Creación:</label>
+            <input type="date" id="fechaCreacion" [(ngModel)]="televisor.fechaCreacion" name="fechaCreacion">
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</div>
